@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SWF with Ruffle</title>
-  <script src="ruffle.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoQwerty Minigames - Grow Valley</title>
+    <script src="ruffle.js"></script>
+    <style>
+        body {
+            font-family: 'Aharoni', sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        .main-title {
+            font-family: 'Bowlby One SC', sans-serif;
+            font-size: 36px;
+            margin: 30px 0 20px 0;
+            color: #333;
+        }
+
+        .game-frame {
+            width: 800px;
+            height: 600px;
+            border: 5px solid #007BFF;
+            border-radius: 12px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 850px) {
+            .game-frame {
+                width: 95%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
+    <h1 class="main-title">GoQwerty Minigames</h1>
 
-  <embed src="GROW_Valley.swf" width="800" height="600">
+    <div class="game-frame">
+        <!-- Ruffle will replace the embed automatically -->
+        <embed src="GROW_Valley.swf" width="100%" height="100%">
+    </div>
 
+    <div class="footer-text">Go_Qwerty Games</div>
 </body>
 </html>
-
