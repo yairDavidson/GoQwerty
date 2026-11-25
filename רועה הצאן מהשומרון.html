@@ -255,8 +255,7 @@ P.dodge+=.08 // ['טלית של בלנסיאגה','+8% סיכוי להתחמק �
 P.arm+=.1 // ['אפר פרה אדומה','-10% נזק שנספג',()=>P.arm+=.1,()=>P.arm<.4,'efer'],
 //['קניידלך של סבתא','רפואה שלמה – ממלא את כל החיים',()=>P.hp=P.max,()=>P.hp<P.max*.7,'kneidl'];
 };
-const intro=()=>card(`<span class="burst">שלב ${lvl+1}</span>`,s.n,'','צא לדרך',go);
-intro()}
+const intro=()=>card(`<span class="burst">שלב ${lvl+1}</span>`,s.n,'','צא לדרך',go);intro()}
 const PRAY=['טירונות','אימון מתקדם','ביסלח','גדוד'],prayer=(r,t)=>PRAY[Math.max(0,4-t)+r-1]||PRAY[3];
 const lv=()=>lvl<9?2:Math.min(16,lvl-Math.floor(lvl/3));
 const dmul=()=>lvl<9?1:(1.9+.3*(lvl-9))*1.25;
@@ -528,7 +527,7 @@ cx.setTransform(1,0,0,1,0,0);const g=cx.createRadialGradient(cv.width/2,cv.heigh
 if(flash>0){cx.fillStyle='rgba(255,240,200,'+flash+')';cx.fillRect(0,0,cv.width,cv.height)}}
 let sadOn=false,templeOn=false,ark=null,tempT=0,wasMM=0,TMi=2;
 const SPEC=[
-['ארון קבורה','חיים נשארים אותו דבר ופחות 50 חיים מקסימום',()=>{P.max-=50},null,'ark'],
+['ארון קבורה','בייסיקלי הורג אותך',()=>{Object.assign(P,{max:0,hp:0,dmg:0,rate:0,multi:0,sp:120,pc:0,rear:0,diag:0,bn:0,crit:0,burn:0,frz:0,chain:0,leech:0,rage:0,dodge:0,arm:0,ups:[]})},null,'ark'],
 ['אש הגיהנום','-35% נזק',()=>P.dmg=Math.min(40,P.dmg*0.65),null,'holyfire'],
 ['פגיעה מברק','-25% מהירות ירי',()=>P.rate=Math.min(4,P.rate*0.75),null,'bolt'],
 ['כנפי יונה שבורה','-15% מהירות תנועה ופחות 20 חיים',()=>{P.sp=Math.min(180,P.sp*0.85);P.max-=20;P.hp=Math.min(P.max,P.hp-20)},null,'dove'],
